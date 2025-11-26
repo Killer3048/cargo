@@ -12,12 +12,14 @@
   --muted: #c3c9d6;
   --ink: #0b0b0b;
   --accent: #f6c343;
+  --accent-light: #ffd770;
   --accent-strong: #d28608;
   --accent-contrast: #fef4d6;
   --accent-deep: #8a5b04;
   --accent-dark: #6a3f02;
   --accent-2: #d88910;
   --accent-3: #b8720c;
+  --btn-text: #1a1100;
   --accent-2-soft: rgba(216, 137, 16, 0.12);
   --accent-3-soft: rgba(184, 114, 12, 0.32);
   --accent-3-faint: rgba(184, 114, 12, 0.14);
@@ -112,14 +114,18 @@ header.header-hidden {
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: linear-gradient(145deg, var(--accent), var(--accent-deep));
+  background: linear-gradient(145deg, var(--accent), var(--accent-light));
   border: 1px solid var(--alpha-32);
   display: grid;
   place-items: center;
-  font-weight: 800;
-  letter-spacing: 0.08em;
   box-shadow: var(--shadow);
-  color: var(--ink);
+  overflow: hidden;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 nav {
@@ -240,8 +246,8 @@ nav a:focus-visible {
 }
 
 .btn {
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: var(--ink);
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  color: var(--btn-text);
   border: none;
   padding: 13px 18px;
   border-radius: 12px;
@@ -275,7 +281,7 @@ nav a:focus-visible {
 }
 
 .btn.secondary {
-  background: linear-gradient(135deg, var(--accent-3), var(--accent-dark));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-3) 55%, var(--accent-light) 45%), var(--accent-3));
   box-shadow: var(--shadow-btn), var(--shadow-ring);
 }
 
@@ -779,8 +785,8 @@ footer {
   width: 46px;
   height: 46px;
   border-radius: 14px;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: var(--ink);
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  color: var(--btn-text);
   border: 1px solid var(--alpha-30);
   display: grid;
   place-items: center;
