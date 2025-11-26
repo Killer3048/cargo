@@ -1,0 +1,9 @@
+.npmcache
+node_modules
+pw-browsers
+.npmrc
+.python-version
+package-lock.json
+package.json
+pyproject.toml
+requirements.txt
