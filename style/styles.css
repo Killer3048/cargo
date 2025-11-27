@@ -121,6 +121,7 @@ header.header-hidden {
   box-shadow: var(--shadow);
   overflow: hidden;
 }
+
 .logo img {
   width: 100%;
   height: 100%;
@@ -404,6 +405,7 @@ section {
   opacity: 1;
   mix-blend-mode: normal;
 }
+
 .hero-visual::after {
   content: '';
   position: absolute;
@@ -1381,4 +1383,65 @@ body[data-theme="light"] details summary {
 
 body[data-theme="light"] details p {
   color: var(--text-soft);
+}
+
+/* Reviews Block */
+.reviews-grid {
+  column-count: 3;
+  column-gap: 14px;
+}
+
+@media (max-width: 900px) {
+  .reviews-grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-grid {
+    column-count: 1;
+  }
+}
+
+.review-card {
+  break-inside: avoid;
+  margin-bottom: 14px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  background: var(--card);
+  transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--alpha-30);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.review-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 400ms ease;
+}
+
+.review-card:hover img {
+  transform: scale(1.03);
+}
+
+.review-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.review-card:hover::after {
+  opacity: 1;
 }
